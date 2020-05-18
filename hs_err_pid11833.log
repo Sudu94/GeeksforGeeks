@@ -1,0 +1,1099 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f30b9069a7a, pid=11833, tid=0x00007f30aa30e700
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_144-b01) (build 1.8.0_144-b01)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# v  ~BufferBlob::jni_fast_GetLongField
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f30c8655800):  JavaThread "AWT-XAWT" daemon [_thread_in_native, id=11853, stack(0x00007f30aa20e000,0x00007f30aa30f000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000000
+
+Registers:
+RAX=0x00007f30d98cf060, RBX=0x00007f30c86559f8, RCX=0x00007f30da3372c0, RDX=0x0000000000000042
+RSP=0x00007f30aa30d538, RBP=0x00007f30aa30d560, RSI=0x0000000000000000, RDI=0x00007f30c86559f8
+R8 =0x0000000000000320, R9 =0x0000000000000000, R10=0x000000000000018e, R11=0x00007f30b94eab58
+R12=0x00007f303804b180, R13=0x0000000000000000, R14=0x00007f30aaf0d7e0, R15=0x00007f30c8655800
+RIP=0x00007f30b9069a7a, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f30aa30d538)
+0x00007f30aa30d538:   00007f30aacebee1 00007f30b8d49410
+0x00007f30aa30d548:   00007f303804b180 00007f30aa30d610
+0x00007f30aa30d558:   00007f30aa30d5e0 0000000000000000
+0x00007f30aa30d568:   00007f30d81013c0 00007f30b8d49410
+0x00007f30aa30d578:   00007f30aa30d5a0 0000000000000000
+0x00007f30aa30d588:   00007f30d80f8f93 00007f30aa30d610
+0x00007f30aa30d598:   00007f30aace511f 00007f30aa30d5f0
+0x00007f30aa30d5a8:   00007f30b94eabf6 0000000000000000
+0x00007f30aa30d5b8:   00007f30b911e176 00007f30aa30d610
+0x00007f30aa30d5c8:   00007f30d8fce5cb 00007f30aa30d670
+0x00007f30aa30d5d8:   0000000084cbb010 0000000084ea99a0
+0x00007f30aa30d5e8:   0000000000000019 00007f30aa30d670
+0x00007f30aa30d5f8:   00007f30b9007a90 00007f30aa30d670
+0x00007f30aa30d608:   00007f30b9007a90 0000000000000000
+0x00007f30aa30d618:   00007f30b9007dd0 00007f3070000e40
+0x00007f30aa30d628:   0000000084d45c38 00007f30aa30d630
+0x00007f30aa30d638:   00007f30b8d157bc 00007f30aa30d6b8
+0x00007f30aa30d648:   00007f30b8d2ec28 0000000000000000
+0x00007f30aa30d658:   00007f30b8d158f8 00007f30aa30d610
+0x00007f30aa30d668:   00007f30aa30d6b0 00007f30aa30d700
+0x00007f30aa30d678:   00007f30b90082bd 0000000000000000
+0x00007f30aa30d688:   00000000db10ec30 0000000000000000
+0x00007f30aa30d698:   0000000000000000 0000000000000000
+0x00007f30aa30d6a8:   0000000084d45c38 0000000000000000
+0x00007f30aa30d6b8:   0000000084c377a0 00007f30aa30d6c0
+0x00007f30aa30d6c8:   00007f30b8d155fd 00007f30aa30d710
+0x00007f30aa30d6d8:   00007f30b8d2ec28 0000000000000000
+0x00007f30aa30d6e8:   00007f30b8d15608 00007f30aa30d6b0
+0x00007f30aa30d6f8:   00007f30aa30d710 00007f30aa30d758
+0x00007f30aa30d708:   00007f30b9008302 0000000084c377a0
+0x00007f30aa30d718:   00007f30aa30d718 00007f30b882d99b
+0x00007f30aa30d728:   00007f30aa30d768 00007f30b88b50b8 
+
+Instructions: (pc=0x00007f30b9069a7a)
+0x00007f30b9069a5a:   00 00 00 00 00 00 44 8b 15 c1 50 8a 20 4c 8b ce
+0x00007f30b9069a6a:   41 f6 c2 01 0f 85 2e 00 00 00 4d 33 ca 4d 33 ca
+0x00007f30b9069a7a:   4d 8b 09 4c 8b da 49 c1 eb 02 4b 8b 04 19 49 bb
+0x00007f30b9069a8a:   28 eb 90 d9 30 7f 00 00 4c 33 d8 4c 33 d8 45 3b 
+
+Register to memory mapping:
+
+RAX=0x00007f30d98cf060: <offset 0xf8b060> in /snap/arduino-mhall119/5/java/lib/amd64/server/libjvm.so at 0x00007f30d8944000
+RBX=0x00007f30c86559f8 is an unknown value
+RCX=0x00007f30da3372c0: <offset 0x2182c0> in /lib/x86_64-linux-gnu/libpthread.so.0 at 0x00007f30da11f000
+RDX=0x0000000000000042 is an unknown value
+RSP=0x00007f30aa30d538 is pointing into the stack for thread: 0x00007f30c8655800
+RBP=0x00007f30aa30d560 is pointing into the stack for thread: 0x00007f30c8655800
+RSI=0x0000000000000000 is an unknown value
+RDI=0x00007f30c86559f8 is an unknown value
+R8 =0x0000000000000320 is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x000000000000018e is an unknown value
+R11=0x00007f30b94eab58 is at entry_point+24 in (nmethod*)0x00007f30b94ea9d0
+R12=0x00007f303804b180 is an unknown value
+R13=0x0000000000000000 is an unknown value
+R14=0x00007f30aaf0d7e0: <offset 0x2587e0> in /snap/arduino-mhall119/5/java/lib/amd64/libawt_xawt.so at 0x00007f30aacb5000
+R15=0x00007f30c8655800 is a thread
+
+
+Stack: [0x00007f30aa20e000,0x00007f30aa30f000],  sp=0x00007f30aa30d538,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+v  ~BufferBlob::jni_fast_GetLongField
+C  [libX11.so.6+0x643c0]  _XimServerDestroy+0x70
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 2683  sun.awt.X11.XlibWrapper.XFilterEvent(JJ)Z (0 bytes) @ 0x00007f30b94eab84 [0x00007f30b94eab40+0x44]
+j  sun.awt.X11.XToolkit.run(Z)V+300
+j  sun.awt.X11.XToolkit.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f303801f000 JavaThread "XToolkt-Shutdown-Thread" [_thread_in_native, id=12444, stack(0x00007f3065737000,0x00007f3065838000)]
+  0x00007f3038084800 JavaThread "DeleteFilesOnShutdown" [_thread_in_native, id=12442, stack(0x00007f3064c05000,0x00007f3064d06000)]
+  0x00007f3038084000 JavaThread "DiscoveryManager closeHook" [_thread_in_native, id=12441, stack(0x00007f3064b04000,0x00007f3064c05000)]
+  0x00007f3090003000 JavaThread "SIGHUP handler" daemon [_thread_blocked, id=12440, stack(0x00007f30665fb000,0x00007f30666fc000)]
+  0x00007f3090002000 JavaThread "SIGHUP handler" daemon [_thread_blocked, id=12439, stack(0x00007f30660f8000,0x00007f30661f9000)]
+  0x00007f3090001000 JavaThread "SIGTERM handler" daemon [_thread_blocked, id=12436, stack(0x00007f30661f9000,0x00007f30662fa000)]
+  0x00007f30c800b000 JavaThread "DestroyJavaVM" [_thread_blocked, id=11835, stack(0x00007f30d6c23000,0x00007f30d6d24000)]
+  0x00007f30c8f38800 JavaThread "TimerQueue" daemon [_thread_blocked, id=11873, stack(0x00007f3064f08000,0x00007f3065009000)]
+  0x00007f30c8a8a800 JavaThread "Batik CleanerThread" daemon [_thread_blocked, id=11868, stack(0x00007f3065838000,0x00007f3065939000)]
+  0x00007f30c8ad5000 JavaThread "Timer-0" [_thread_blocked, id=11865, stack(0x00007f30664fa000,0x00007f30665fb000)]
+  0x00007f30c8acd000 JavaThread "JmDNS(btnhd-com.local.).State.Timer" daemon [_thread_blocked, id=11863, stack(0x00007f30666fc000,0x00007f30667fd000)]
+  0x00007f30c8acb800 JavaThread "JmDNS(btnhd-com.local.).Timer" daemon [_thread_blocked, id=11862, stack(0x00007f306c0fb000,0x00007f306c1fc000)]
+  0x00007f30c8ac6800 JavaThread "SocketListener(btnhd-com.local.)" daemon [_thread_in_native, id=11861, stack(0x00007f306c1fc000,0x00007f306c2fd000)]
+  0x00007f30c8aaa000 JavaThread "Multihomed mDNS.Timer" daemon [_thread_blocked, id=11860, stack(0x00007f306c2fd000,0x00007f306c3fe000)]
+  0x00007f30c8a88800 JavaThread "cc.arduino.packages.discoverers.serial.SerialBoardsLister" [_thread_blocked, id=11859, stack(0x00007f3074049000,0x00007f307414a000)]
+=>0x00007f30c8655800 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=11853, stack(0x00007f30aa20e000,0x00007f30aa30f000)]
+  0x00007f30c8648000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=11852, stack(0x00007f30aa30f000,0x00007f30aa410000)]
+  0x00007f30c82a5800 JavaThread "Service Thread" daemon [_thread_blocked, id=11848, stack(0x00007f30ab4f5000,0x00007f30ab5f6000)]
+  0x00007f30c82a2800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=11847, stack(0x00007f30ab5f6000,0x00007f30ab6f7000)]
+  0x00007f30c82a0800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=11846, stack(0x00007f30ab6f7000,0x00007f30ab7f8000)]
+  0x00007f30c829d800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=11845, stack(0x00007f30ab7f8000,0x00007f30ab8f9000)]
+  0x00007f30c829c000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=11844, stack(0x00007f30ab8f9000,0x00007f30ab9fa000)]
+  0x00007f30c826a800 JavaThread "Finalizer" daemon [_thread_blocked, id=11842, stack(0x00007f30ab9fa000,0x00007f30abafb000)]
+  0x00007f30c8266000 JavaThread "Reference Handler" daemon [_thread_blocked, id=11841, stack(0x00007f30abafb000,0x00007f30abbfc000)]
+
+Other Threads:
+  0x00007f30c825e000 VMThread [stack: 0x00007f30abbfc000,0x00007f30abcfd000] [id=11840]
+  0x00007f30c82a8800 WatcherThread [stack: 0x00007f30ab3f4000,0x00007f30ab4f5000] [id=11849]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 57856K, used 36466K [0x00000000d6e00000, 0x00000000db600000, 0x0000000100000000)
+  eden space 52736K, 59% used [0x00000000d6e00000,0x00000000d8c9ed00,0x00000000da180000)
+  from space 5120K, 99% used [0x00000000db100000,0x00000000db5fde28,0x00000000db600000)
+  to   space 5120K, 0% used [0x00000000dac00000,0x00000000dac00000,0x00000000db100000)
+ ParOldGen       total 51200K, used 8114K [0x0000000084a00000, 0x0000000087c00000, 0x00000000d6e00000)
+  object space 51200K, 15% used [0x0000000084a00000,0x00000000851ec858,0x0000000087c00000)
+ Metaspace       used 30732K, capacity 31274K, committed 31488K, reserved 1077248K
+  class space    used 3955K, capacity 4086K, committed 4096K, reserved 1048576K
+
+Card table byte_map: [0x00007f30d4fd9000,0x00007f30d53b5000] byte_map_base: 0x00007f30d4bb4000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f30d990ddc0
+ Begin Bits: [0x00007f30b0250000, 0x00007f30b2128000)
+ End Bits:   [0x00007f30b2128000, 0x00007f30b4000000)
+
+Polling page: 0x00007f30da751000
+
+CodeCache: size=245760Kb used=9692Kb max_used=9704Kb free=236067Kb
+ bounds [0x00007f30b9000000, 0x00007f30b9990000, 0x00007f30c8000000]
+ total_blobs=3801 nmethods=3110 adapters=602
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 943.453 Thread 0x00007f30c82a0800 nmethod 3396 0x00007f30b9975650 code [0x00007f30b99757a0, 0x00007f30b9975818]
+Event: 943.453 Thread 0x00007f30c82a2800 3397  s    3       java.util.Vector::iterator (10 bytes)
+Event: 943.454 Thread 0x00007f30c82a2800 nmethod 3397 0x00007f30b9980e10 code [0x00007f30b9980fa0, 0x00007f30b9981410]
+Event: 943.454 Thread 0x00007f30c82a2800 3398       3       java.util.Vector$Itr::<init> (6 bytes)
+Event: 943.455 Thread 0x00007f30c82a2800 nmethod 3398 0x00007f30b9980950 code [0x00007f30b9980ac0, 0x00007f30b9980cf0]
+Event: 972.546 Thread 0x00007f30c82a2800 3399       1       java.lang.Thread::getThreadGroup (5 bytes)
+Event: 972.546 Thread 0x00007f30c82a2800 nmethod 3399 0x00007f30b9980690 code [0x00007f30b99807e0, 0x00007f30b99808f0]
+Event: 972.548 Thread 0x00007f30c82a2800 3400       3       java.util.logging.LogManager::checkPermission (17 bytes)
+Event: 972.549 Thread 0x00007f30c82a2800 nmethod 3400 0x00007f30b93e61d0 code [0x00007f30b93e6340, 0x00007f30b93e6608]
+Event: 972.549 Thread 0x00007f30c82a2800 3401       3       java.util.logging.Logger::updateEffectiveLevel (115 bytes)
+
+GC Heap History (10 events):
+Event: 2.498 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 31744K [0x00000000d6e00000, 0x00000000d9700000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000d6e00000,0x00000000d8d00000,0x00000000d8d00000)
+  from space 5120K, 0% used [0x00000000d9200000,0x00000000d9200000,0x00000000d9700000)
+  to   space 5120K, 0% used [0x00000000d8d00000,0x00000000d8d00000,0x00000000d9200000)
+ ParOldGen       total 84992K, used 0K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 0% used [0x0000000084a00000,0x0000000084a00000,0x0000000089d00000)
+ Metaspace       used 15198K, capacity 15422K, committed 15616K, reserved 1062912K
+  class space    used 1694K, capacity 1765K, committed 1792K, reserved 1048576K
+Event: 2.508 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 5091K [0x00000000d6e00000, 0x00000000d9700000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6e00000,0x00000000d6e00000,0x00000000d8d00000)
+  from space 5120K, 99% used [0x00000000d8d00000,0x00000000d91f8ce8,0x00000000d9200000)
+  to   space 5120K, 0% used [0x00000000d9200000,0x00000000d9200000,0x00000000d9700000)
+ ParOldGen       total 84992K, used 2067K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 2% used [0x0000000084a00000,0x0000000084c04e78,0x0000000089d00000)
+ Metaspace       used 15198K, capacity 15422K, committed 15616K, reserved 1062912K
+  class space    used 1694K, capacity 1765K, committed 1792K, reserved 1048576K
+}
+Event: 3.625 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 36864K, used 36835K [0x00000000d6e00000, 0x00000000d9700000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000d6e00000,0x00000000d8d00000,0x00000000d8d00000)
+  from space 5120K, 99% used [0x00000000d8d00000,0x00000000d91f8ce8,0x00000000d9200000)
+  to   space 5120K, 0% used [0x00000000d9200000,0x00000000d9200000,0x00000000d9700000)
+ ParOldGen       total 84992K, used 2067K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 2% used [0x0000000084a00000,0x0000000084c04e78,0x0000000089d00000)
+ Metaspace       used 19292K, capacity 19660K, committed 19840K, reserved 1067008K
+  class space    used 2303K, capacity 2413K, committed 2432K, reserved 1048576K
+Event: 3.640 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 36864K, used 5092K [0x00000000d6e00000, 0x00000000d9700000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6e00000,0x00000000d6e00000,0x00000000d8d00000)
+  from space 5120K, 99% used [0x00000000d9200000,0x00000000d96f9168,0x00000000d9700000)
+  to   space 5120K, 0% used [0x00000000d8d00000,0x00000000d8d00000,0x00000000d9200000)
+ ParOldGen       total 84992K, used 4430K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 5% used [0x0000000084a00000,0x0000000084e539e0,0x0000000089d00000)
+ Metaspace       used 19292K, capacity 19660K, committed 19840K, reserved 1067008K
+  class space    used 2303K, capacity 2413K, committed 2432K, reserved 1048576K
+}
+Event: 3.758 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 36864K, used 8823K [0x00000000d6e00000, 0x00000000d9700000, 0x0000000100000000)
+  eden space 31744K, 11% used [0x00000000d6e00000,0x00000000d71a4ce0,0x00000000d8d00000)
+  from space 5120K, 99% used [0x00000000d9200000,0x00000000d96f9168,0x00000000d9700000)
+  to   space 5120K, 0% used [0x00000000d8d00000,0x00000000d8d00000,0x00000000d9200000)
+ ParOldGen       total 84992K, used 4430K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 5% used [0x0000000084a00000,0x0000000084e539e0,0x0000000089d00000)
+ Metaspace       used 20772K, capacity 21132K, committed 21296K, reserved 1069056K
+  class space    used 2489K, capacity 2605K, committed 2688K, reserved 1048576K
+Event: 3.767 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 36864K, used 5092K [0x00000000d6e00000, 0x00000000db600000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6e00000,0x00000000d6e00000,0x00000000d8d00000)
+  from space 5120K, 99% used [0x00000000d8d00000,0x00000000d91f9168,0x00000000d9200000)
+  to   space 5120K, 0% used [0x00000000db100000,0x00000000db100000,0x00000000db600000)
+ ParOldGen       total 84992K, used 5199K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 6% used [0x0000000084a00000,0x0000000084f13fc0,0x0000000089d00000)
+ Metaspace       used 20772K, capacity 21132K, committed 21296K, reserved 1069056K
+  class space    used 2489K, capacity 2605K, committed 2688K, reserved 1048576K
+}
+Event: 3.767 GC heap before
+{Heap before GC invocations=4 (full 1):
+ PSYoungGen      total 36864K, used 5092K [0x00000000d6e00000, 0x00000000db600000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6e00000,0x00000000d6e00000,0x00000000d8d00000)
+  from space 5120K, 99% used [0x00000000d8d00000,0x00000000d91f9168,0x00000000d9200000)
+  to   space 5120K, 0% used [0x00000000db100000,0x00000000db100000,0x00000000db600000)
+ ParOldGen       total 84992K, used 5199K [0x0000000084a00000, 0x0000000089d00000, 0x00000000d6e00000)
+  object space 84992K, 6% used [0x0000000084a00000,0x0000000084f13fc0,0x0000000089d00000)
+ Metaspace       used 20772K, capacity 21132K, committed 21296K, reserved 1069056K
+  class space    used 2489K, capacity 2605K, committed 2688K, reserved 1048576K
+Event: 3.812 GC heap after
+Heap after GC invocations=4 (full 1):
+ PSYoungGen      total 36864K, used 0K [0x00000000d6e00000, 0x00000000db600000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6e00000,0x00000000d6e00000,0x00000000d8d00000)
+  from space 5120K, 0% used [0x00000000d8d00000,0x00000000d8d00000,0x00000000d9200000)
+  to   space 5120K, 0% used [0x00000000db100000,0x00000000db100000,0x00000000db600000)
+ ParOldGen       total 51200K, used 6529K [0x0000000084a00000, 0x0000000087c00000, 0x00000000d6e00000)
+  object space 51200K, 12% used [0x0000000084a00000,0x0000000085060680,0x0000000087c00000)
+ Metaspace       used 20772K, capacity 21132K, committed 21296K, reserved 1069056K
+  class space    used 2489K, capacity 2605K, committed 2688K, reserved 1048576K
+}
+Event: 5.133 GC heap before
+{Heap before GC invocations=5 (full 1):
+ PSYoungGen      total 36864K, used 31714K [0x00000000d6e00000, 0x00000000db600000, 0x0000000100000000)
+  eden space 31744K, 99% used [0x00000000d6e00000,0x00000000d8cf8b10,0x00000000d8d00000)
+  from space 5120K, 0% used [0x00000000d8d00000,0x00000000d8d00000,0x00000000d9200000)
+  to   space 5120K, 0% used [0x00000000db100000,0x00000000db100000,0x00000000db600000)
+ ParOldGen       total 51200K, used 6529K [0x0000000084a00000, 0x0000000087c00000, 0x00000000d6e00000)
+  object space 51200K, 12% used [0x0000000084a00000,0x0000000085060680,0x0000000087c00000)
+ Metaspace       used 28459K, capacity 28976K, committed 29184K, reserved 1075200K
+  class space    used 3690K, capacity 3819K, committed 3840K, reserved 1048576K
+Event: 5.146 GC heap after
+Heap after GC invocations=5 (full 1):
+ PSYoungGen      total 57856K, used 5111K [0x00000000d6e00000, 0x00000000db600000, 0x0000000100000000)
+  eden space 52736K, 0% used [0x00000000d6e00000,0x00000000d6e00000,0x00000000da180000)
+  from space 5120K, 99% used [0x00000000db100000,0x00000000db5fde28,0x00000000db600000)
+  to   space 5120K, 0% used [0x00000000dac00000,0x00000000dac00000,0x00000000db100000)
+ ParOldGen       total 51200K, used 8114K [0x0000000084a00000, 0x0000000087c00000, 0x00000000d6e00000)
+  object space 51200K, 15% used [0x0000000084a00000,0x00000000851ec858,0x0000000087c00000)
+ Metaspace       used 28459K, capacity 28976K, committed 29184K, reserved 1075200K
+  class space    used 3690K, capacity 3819K, committed 3840K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 5.187 Thread 0x00007f30c8ed8800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30b9613974 method=sun.awt.SunToolkit.getAppContext(Ljava/lang/Object;)Lsun/awt/AppContext; @ 4
+Event: 5.608 Thread 0x00007f30c8f79800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30b95a3034 method=java.lang.String.regionMatches(ZILjava/lang/String;II)Z @ 123
+Event: 5.609 Thread 0x00007f30c8f79800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30b95b60dc method=java.lang.String.regionMatches(ZILjava/lang/String;II)Z @ 123
+Event: 65.470 Thread 0x00007f30c8f7c000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f30b962fdbc method=java.net.URL.<init>(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V @ 504
+Event: 67.504 Thread 0x00007f30c8f7c000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f30b962fdbc method=java.net.URL.<init>(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V @ 504
+Event: 67.765 Thread 0x00007f30c8f7c000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30b93d221c method=java.util.LinkedHashMap.get(Ljava/lang/Object;)Ljava/lang/Object; @ 20
+Event: 68.195 Thread 0x00007f30c8f7c000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f30b962fdbc method=java.net.URL.<init>(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V @ 504
+Event: 850.266 Thread 0x00007f30c8ed8800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30b941993c method=java.util.regex.Pattern$Start.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 10
+Event: 850.744 Thread 0x00007f30c8ed8800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30b9965678 method=javax.swing.text.Utilities.getTabbedTextOffset(Ljavax/swing/text/View;Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;IILjavax/swing/text/TabExpander;IZ[I)I @ 196
+Event: 851.141 Thread 0x00007f30c8ed8800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f30b9973f90 method=javax.swing.text.Utilities.getTabbedTextWidth(Ljavax/swing/text/View;Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;ILjavax/swing/text/TabExpander;I[I)I @ 204
+
+Internal exceptions (10 events):
+Event: 69.869 Thread 0x00007f30c8f7c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000d89213c8) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 69.895 Thread 0x00007f30c8f7c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000d892d7a0) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 69.896 Thread 0x00007f30c8f7c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000d8938260) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 69.897 Thread 0x00007f30c8f7c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000d8943248) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 69.899 Thread 0x00007f30c8f7c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000d894e6a8) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 69.900 Thread 0x00007f30c8f7c000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000d89594c8) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 849.648 Thread 0x00007f30c8ed8800 Exception <a 'java/lang/NullPointerException'> (0x00000000d74f06a8) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 1197]
+Event: 849.802 Thread 0x00007f30c8ed8800 Exception <a 'java/io/FileNotFoundException'> (0x00000000d74f2018) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 850.118 Thread 0x00007f30c8ed8800 Exception <a 'java/lang/RuntimeException'> (0x00000000d89eef28) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jvm.cpp, line 1394]
+Event: 850.118 Thread 0x00007f30c8ed8800 Exception <a 'java/lang/RuntimeException'> (0x00000000d89eef28) thrown at [/HUDSON3/workspace/8-2-build-linux-amd64/jdk8u144/9417/hotspot/src/share/vm/prims/jvm.cpp, line 1394]
+
+Events (10 events):
+Event: 964.802 Thread 0x00007f3090002000 Thread added: 0x00007f3090002000
+Event: 964.802 Thread 0x00007f3090003000 Thread added: 0x00007f3090003000
+Event: 964.802 Thread 0x00007f3038084000 Thread added: 0x00007f3038084000
+Event: 964.802 Thread 0x00007f3038084800 Thread added: 0x00007f3038084800
+Event: 964.802 Thread 0x00007f303801e000 Thread added: 0x00007f303801e000
+Event: 964.802 Thread 0x00007f303801f000 Thread added: 0x00007f303801f000
+Event: 972.546 Thread 0x00007f30c82a2800 flushing nmethod 0x00007f30b93e61d0
+Event: 972.546 loading class sun/awt/X11/XSystemTrayPeer
+Event: 972.547 loading class javax/jmdns/impl/tasks/state/Canceler
+Event: 972.554 Thread 0x00007f303801e000 Thread exited: 0x00007f303801e000
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 07:12 2889                               /snap/arduino-mhall119/5/java/bin/java
+00600000-00601000 rw-p 00000000 07:12 2889                               /snap/arduino-mhall119/5/java/bin/java
+022ce000-02335000 rw-p 00000000 00:00 0                                  [heap]
+84a00000-87c00000 rw-p 00000000 00:00 0 
+87c00000-d6e00000 ---p 00000000 00:00 0 
+d6e00000-db600000 rw-p 00000000 00:00 0 
+db600000-100000000 ---p 00000000 00:00 0 
+100000000-100400000 rw-p 00000000 00:00 0 
+100400000-140000000 ---p 00000000 00:00 0 
+7f3030000000-7f303002b000 rw-p 00000000 00:00 0 
+7f303002b000-7f3034000000 ---p 00000000 00:00 0 
+7f3038000000-7f303814b000 rw-p 00000000 00:00 0 
+7f303814b000-7f303c000000 ---p 00000000 00:00 0 
+7f303c000000-7f303c021000 rw-p 00000000 00:00 0 
+7f303c021000-7f3040000000 ---p 00000000 00:00 0 
+7f3040000000-7f304004d000 rw-p 00000000 00:00 0 
+7f304004d000-7f3044000000 ---p 00000000 00:00 0 
+7f3044000000-7f3044021000 rw-p 00000000 00:00 0 
+7f3044021000-7f3048000000 ---p 00000000 00:00 0 
+7f3048000000-7f3048021000 rw-p 00000000 00:00 0 
+7f3048021000-7f304c000000 ---p 00000000 00:00 0 
+7f304c000000-7f304c021000 rw-p 00000000 00:00 0 
+7f304c021000-7f3050000000 ---p 00000000 00:00 0 
+7f3050000000-7f3050021000 rw-p 00000000 00:00 0 
+7f3050021000-7f3054000000 ---p 00000000 00:00 0 
+7f3054000000-7f3054021000 rw-p 00000000 00:00 0 
+7f3054021000-7f3058000000 ---p 00000000 00:00 0 
+7f3058000000-7f3058022000 rw-p 00000000 00:00 0 
+7f3058022000-7f305c000000 ---p 00000000 00:00 0 
+7f305c000000-7f305c022000 rw-p 00000000 00:00 0 
+7f305c022000-7f3060000000 ---p 00000000 00:00 0 
+7f3060000000-7f3060022000 rw-p 00000000 00:00 0 
+7f3060022000-7f3064000000 ---p 00000000 00:00 0 
+7f30640eb000-7f30641ab000 rw-p 00000000 00:00 0 
+7f30641ab000-7f30642eb000 ---p 00000000 00:00 0 
+7f30642eb000-7f30642f0000 r-xp 00000000 07:08 2208                       /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f30642f0000-7f30644f0000 ---p 00005000 07:08 2208                       /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f30644f0000-7f30644f1000 r--p 00005000 07:08 2208                       /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f30644f1000-7f30644f2000 rw-p 00006000 07:08 2208                       /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f30644f2000-7f30644fd000 r-xp 00000000 07:12 12445                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7f30644fd000-7f30646fd000 ---p 0000b000 07:12 12445                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7f30646fd000-7f30646fe000 r--p 0000b000 07:12 12445                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7f30646fe000-7f30646ff000 rw-p 0000c000 07:12 12445                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7f30646ff000-7f3064703000 r-xp 00000000 07:12 12446                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gio/modules/libgiognomeproxy.so
+7f3064703000-7f3064902000 ---p 00004000 07:12 12446                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gio/modules/libgiognomeproxy.so
+7f3064902000-7f3064903000 r--p 00003000 07:12 12446                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gio/modules/libgiognomeproxy.so
+7f3064903000-7f3064904000 rw-p 00004000 07:12 12446                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gio/modules/libgiognomeproxy.so
+7f3064904000-7f3064b04000 rw-p 00000000 00:00 0 
+7f3064b04000-7f3064b07000 ---p 00000000 00:00 0 
+7f3064b07000-7f3064c05000 rw-p 00000000 00:00 0 
+7f3064c05000-7f3064c08000 ---p 00000000 00:00 0 
+7f3064c08000-7f3064d06000 rw-p 00000000 00:00 0 
+7f3064d06000-7f3064d09000 ---p 00000000 00:00 0 
+7f3064d09000-7f3064e07000 rw-p 00000000 00:00 0 
+7f3064e07000-7f3064e0a000 ---p 00000000 00:00 0 
+7f3064e0a000-7f3064f08000 rw-p 00000000 00:00 0 
+7f3064f08000-7f3064f0b000 ---p 00000000 00:00 0 
+7f3064f0b000-7f3065009000 rw-p 00000000 00:00 0 
+7f3065009000-7f306500c000 ---p 00000000 00:00 0 
+7f306500c000-7f306530a000 rw-p 00000000 00:00 0 
+7f306530a000-7f3065334000 r-xp 00000000 07:12 2916                       /snap/arduino-mhall119/5/java/lib/amd64/libdcpr.so
+7f3065334000-7f3065534000 ---p 0002a000 07:12 2916                       /snap/arduino-mhall119/5/java/lib/amd64/libdcpr.so
+7f3065534000-7f3065537000 rw-p 0002a000 07:12 2916                       /snap/arduino-mhall119/5/java/lib/amd64/libdcpr.so
+7f3065537000-7f3065737000 rw-p 00000000 00:00 0 
+7f3065737000-7f306573a000 ---p 00000000 00:00 0 
+7f306573a000-7f3065838000 rw-p 00000000 00:00 0 
+7f3065838000-7f306583b000 ---p 00000000 00:00 0 
+7f306583b000-7f3065b39000 rw-p 00000000 00:00 0 
+7f3065b39000-7f3065cab000 r-xp 00000000 07:08 6944                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f3065cab000-7f3065eab000 ---p 00172000 07:08 6944                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f3065eab000-7f3065eb5000 r--p 00172000 07:08 6944                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f3065eb5000-7f3065eb7000 rw-p 0017c000 07:08 6944                       /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+7f3065eb7000-7f3065ebb000 rw-p 00000000 00:00 0 
+7f3065ebb000-7f3065ef6000 r-xp 00000000 07:12 3338                       /snap/arduino-mhall119/5/lib/libastylej.so
+7f3065ef6000-7f30660f6000 ---p 0003b000 07:12 3338                       /snap/arduino-mhall119/5/lib/libastylej.so
+7f30660f6000-7f30660f7000 rw-p 0003b000 07:12 3338                       /snap/arduino-mhall119/5/lib/libastylej.so
+7f30660f7000-7f30660f8000 rw-p 00000000 00:00 0 
+7f30660f8000-7f30660fb000 ---p 00000000 00:00 0 
+7f30660fb000-7f30661f9000 rw-p 00000000 00:00 0 
+7f30661f9000-7f30661fc000 ---p 00000000 00:00 0 
+7f30661fc000-7f30664fa000 rw-p 00000000 00:00 0 
+7f30664fa000-7f30664fd000 ---p 00000000 00:00 0 
+7f30664fd000-7f30665fb000 rw-p 00000000 00:00 0 
+7f30665fb000-7f30665fe000 ---p 00000000 00:00 0 
+7f30665fe000-7f30666fc000 rw-p 00000000 00:00 0 
+7f30666fc000-7f30666ff000 ---p 00000000 00:00 0 
+7f30666ff000-7f30667fd000 rw-p 00000000 00:00 0 
+7f30667fd000-7f30667fe000 ---p 00000000 00:00 0 
+7f30667fe000-7f3066ffe000 rw-p 00000000 00:00 0 
+7f3066ffe000-7f3066fff000 ---p 00000000 00:00 0 
+7f3066fff000-7f30677ff000 rw-p 00000000 00:00 0 
+7f30677ff000-7f3067800000 ---p 00000000 00:00 0 
+7f3067800000-7f3068000000 rw-p 00000000 00:00 0 
+7f3068000000-7f3068021000 rw-p 00000000 00:00 0 
+7f3068021000-7f306c000000 ---p 00000000 00:00 0 
+7f306c025000-7f306c07b000 rw-s 00000000 00:05 19464225                   /SYSV00000000 (deleted)
+7f306c07b000-7f306c0fb000 rw-s 00000000 00:05 19136544                   /SYSV00000000 (deleted)
+7f306c0fb000-7f306c0fe000 ---p 00000000 00:00 0 
+7f306c0fe000-7f306c1fc000 rw-p 00000000 00:00 0 
+7f306c1fc000-7f306c1ff000 ---p 00000000 00:00 0 
+7f306c1ff000-7f306c2fd000 rw-p 00000000 00:00 0 
+7f306c2fd000-7f306c300000 ---p 00000000 00:00 0 
+7f306c300000-7f306c5fe000 rw-p 00000000 00:00 0 
+7f306c5fe000-7f306c7fe000 rw-p 00000000 00:00 0 
+7f306c7fe000-7f306c7ff000 ---p 00000000 00:00 0 
+7f306c7ff000-7f3070000000 rw-p 00000000 00:00 0 
+7f3070000000-7f307002a000 rw-p 00000000 00:00 0 
+7f307002a000-7f3074000000 ---p 00000000 00:00 0 
+7f3074049000-7f307404c000 ---p 00000000 00:00 0 
+7f307404c000-7f307434a000 rw-p 00000000 00:00 0 
+7f307434a000-7f30743b3000 r-xp 00000000 07:12 2960                       /snap/arduino-mhall119/5/java/lib/amd64/libt2k.so
+7f30743b3000-7f30745b3000 ---p 00069000 07:12 2960                       /snap/arduino-mhall119/5/java/lib/amd64/libt2k.so
+7f30745b3000-7f30745ba000 rw-p 00069000 07:12 2960                       /snap/arduino-mhall119/5/java/lib/amd64/libt2k.so
+7f30745ba000-7f30747ca000 rw-p 00000000 00:00 0 
+7f30747ca000-7f3074830000 r-xp 00000000 07:12 12634                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libibus-1.0.so.5.0.511
+7f3074830000-7f3074a2f000 ---p 00066000 07:12 12634                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libibus-1.0.so.5.0.511
+7f3074a2f000-7f3074a31000 r--p 00065000 07:12 12634                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libibus-1.0.so.5.0.511
+7f3074a31000-7f3074a32000 rw-p 00067000 07:12 12634                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libibus-1.0.so.5.0.511
+7f3074a32000-7f3074a33000 rw-p 00000000 00:00 0 
+7f3074a33000-7f3074a39000 r-xp 00000000 07:12 12462                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+7f3074a39000-7f3074c39000 ---p 00006000 07:12 12462                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+7f3074c39000-7f3074c3a000 r--p 00006000 07:12 12462                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+7f3074c3a000-7f3074c3b000 rw-p 00007000 07:12 12462                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+7f3074c3b000-7f3074c4c000 r-xp 00000000 07:12 2950                       /snap/arduino-mhall119/5/java/lib/amd64/libnio.so
+7f3074c4c000-7f3074e4b000 ---p 00011000 07:12 2950                       /snap/arduino-mhall119/5/java/lib/amd64/libnio.so
+7f3074e4b000-7f3074e4c000 rw-p 00010000 07:12 2950                       /snap/arduino-mhall119/5/java/lib/amd64/libnio.so
+7f3074e4c000-7f3074e62000 r-xp 00000000 07:12 2949                       /snap/arduino-mhall119/5/java/lib/amd64/libnet.so
+7f3074e62000-7f3075062000 ---p 00016000 07:12 2949                       /snap/arduino-mhall119/5/java/lib/amd64/libnet.so
+7f3075062000-7f3075063000 rw-p 00016000 07:12 2949                       /snap/arduino-mhall119/5/java/lib/amd64/libnet.so
+7f3075063000-7f3075093000 r-xp 00000000 07:12 12457                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f3075093000-7f3075293000 ---p 00030000 07:12 12457                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f3075293000-7f3075294000 r--p 00030000 07:12 12457                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f3075294000-7f3075295000 rw-p 00031000 07:12 12457                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f3075295000-7f3075296000 r-xp 00000000 07:12 12618                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.4800.2
+7f3075296000-7f3075495000 ---p 00001000 07:12 12618                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.4800.2
+7f3075495000-7f3075496000 r--p 00000000 07:12 12618                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.4800.2
+7f3075496000-7f3075497000 rw-p 00001000 07:12 12618                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.4800.2
+7f3075497000-7f307549d000 r-xp 00000000 07:12 12559                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f307549d000-7f307569d000 ---p 00006000 07:12 12559                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f307569d000-7f307569e000 r--p 00006000 07:12 12559                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f307569e000-7f307569f000 rw-p 00007000 07:12 12559                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f307569f000-7f30756c3000 r-xp 00000000 07:12 12614                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f30756c3000-7f30758c2000 ---p 00024000 07:12 12614                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f30758c2000-7f30758c4000 r--p 00023000 07:12 12614                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f30758c4000-7f30758c5000 rw-p 00025000 07:12 12614                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f30758c5000-7f30758eb000 r-xp 00000000 07:12 3399                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f30758eb000-7f3075aeb000 ---p 00026000 07:12 3399                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f3075aeb000-7f3075aed000 r--p 00026000 07:12 3399                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f3075aed000-7f3075aee000 rw-p 00028000 07:12 3399                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f3075aee000-7f3075b5c000 r-xp 00000000 07:08 2229                       /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f3075b5c000-7f3075d5c000 ---p 0006e000 07:08 2229                       /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f3075d5c000-7f3075d5d000 r--p 0006e000 07:08 2229                       /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f3075d5d000-7f3075d5e000 rw-p 0006f000 07:08 2229                       /lib/x86_64-linux-gnu/libpcre.so.3.13.2
+7f3075d5e000-7f3075d65000 r-xp 00000000 07:12 12585                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f3075d65000-7f3075f64000 ---p 00007000 07:12 12585                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f3075f64000-7f3075f65000 r--p 00006000 07:12 12585                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f3075f65000-7f3075f66000 rw-p 00007000 07:12 12585                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f3075f66000-7f3075f6e000 r-xp 00000000 07:12 12708                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libthai.so.0.2.4
+7f3075f6e000-7f307616d000 ---p 00008000 07:12 12708                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libthai.so.0.2.4
+7f307616d000-7f307616e000 r--p 00007000 07:12 12708                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libthai.so.0.2.4
+7f307616e000-7f307616f000 rw-p 00008000 07:12 12708                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libthai.so.0.2.4
+7f307616f000-7f30761cb000 r-xp 00000000 07:12 12630                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10000.1
+7f30761cb000-7f30763cb000 ---p 0005c000 07:12 12630                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10000.1
+7f30763cb000-7f30763cc000 r--p 0005c000 07:12 12630                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10000.1
+7f30763cc000-7f30763cd000 rw-p 0005d000 07:12 12630                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10000.1
+7f30763cd000-7f30763e4000 r-xp 00000000 07:08 2242                       /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f30763e4000-7f30765e4000 ---p 00017000 07:08 2242                       /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f30765e4000-7f30765e5000 r--p 00017000 07:08 2242                       /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f30765e5000-7f30765e6000 rw-p 00018000 07:08 2242                       /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f30765e6000-7f30765e8000 rw-p 00000000 00:00 0 
+7f30765e8000-7f3076607000 r-xp 00000000 07:08 2248                       /lib/x86_64-linux-gnu/libselinux.so.1
+7f3076607000-7f3076806000 ---p 0001f000 07:08 2248                       /lib/x86_64-linux-gnu/libselinux.so.1
+7f3076806000-7f3076807000 r--p 0001e000 07:08 2248                       /lib/x86_64-linux-gnu/libselinux.so.1
+7f3076807000-7f3076808000 rw-p 0001f000 07:08 2248                       /lib/x86_64-linux-gnu/libselinux.so.1
+7f3076808000-7f307680a000 rw-p 00000000 00:00 0 
+7f307680a000-7f3076823000 r-xp 00000000 07:08 2278                       /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f3076823000-7f3076a22000 ---p 00019000 07:08 2278                       /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f3076a22000-7f3076a23000 r--p 00018000 07:08 2278                       /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f3076a23000-7f3076a24000 rw-p 00019000 07:08 2278                       /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f3076a24000-7f3076a2c000 r-xp 00000000 07:12 12728                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f3076a2c000-7f3076c2c000 ---p 00008000 07:12 12728                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f3076c2c000-7f3076c2d000 r--p 00008000 07:12 12728                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f3076c2d000-7f3076c2e000 rw-p 00009000 07:12 12728                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f3076c2e000-7f3076c30000 r-xp 00000000 07:12 12730                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f3076c30000-7f3076e30000 ---p 00002000 07:12 12730                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f3076e30000-7f3076e31000 r--p 00002000 07:12 12730                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f3076e31000-7f3076e32000 rw-p 00003000 07:12 12730                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f3076e32000-7f3076e56000 r-xp 00000000 07:12 3405                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f3076e56000-7f3077055000 ---p 00024000 07:12 3405                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f3077055000-7f3077056000 r--p 00023000 07:12 3405                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f3077056000-7f3077057000 rw-p 00024000 07:12 3405                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f3077057000-7f30770f6000 r-xp 00000000 07:12 12687                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6
+7f30770f6000-7f30772f6000 ---p 0009f000 07:12 12687                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6
+7f30772f6000-7f30772fe000 r--p 0009f000 07:12 12687                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6
+7f30772fe000-7f30772ff000 rw-p 000a7000 07:12 12687                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6
+7f30772ff000-7f30773a3000 r-xp 00000000 07:12 12589                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f30773a3000-7f30775a2000 ---p 000a4000 07:12 12589                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f30775a2000-7f30775a8000 r--p 000a3000 07:12 12589                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f30775a8000-7f30775a9000 rw-p 000a9000 07:12 12589                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.1
+7f30775a9000-7f30775ab000 r-xp 00000000 07:12 12513                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f30775ab000-7f30777aa000 ---p 00002000 07:12 12513                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f30777aa000-7f30777ab000 r--p 00001000 07:12 12513                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f30777ab000-7f30777ac000 rw-p 00002000 07:12 12513                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f30777ac000-7f30777ae000 r-xp 00000000 07:12 12509                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f30777ae000-7f30779ad000 ---p 00002000 07:12 12509                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f30779ad000-7f30779ae000 r--p 00001000 07:12 12509                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f30779ae000-7f30779af000 rw-p 00002000 07:12 12509                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f30779af000-7f30779b9000 r-xp 00000000 07:12 12525                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f30779b9000-7f3077bb8000 ---p 0000a000 07:12 12525                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f3077bb8000-7f3077bb9000 r--p 00009000 07:12 12525                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f3077bb9000-7f3077bba000 rw-p 0000a000 07:12 12525                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f3077bba000-7f3077bbc000 r-xp 00000000 07:12 12523                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f3077bbc000-7f3077dbb000 ---p 00002000 07:12 12523                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f3077dbb000-7f3077dbc000 r--p 00001000 07:12 12523                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f3077dbc000-7f3077dbd000 rw-p 00002000 07:12 12523                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f3077dbd000-7f3077dfa000 r-xp 00000000 07:12 12587                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+7f3077dfa000-7f3077ff9000 ---p 0003d000 07:12 12587                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+7f3077ff9000-7f3077ffb000 r--p 0003c000 07:12 12587                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+7f3077ffb000-7f3078000000 rw-p 0003e000 07:12 12587                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libfontconfig.so.1.9.0
+7f3078000000-7f3078021000 rw-p 00000000 00:00 0 
+7f3078021000-7f307c000000 ---p 00000000 00:00 0 
+7f307c000000-7f307c021000 rw-p 00000000 00:00 0 
+7f307c021000-7f3080000000 ---p 00000000 00:00 0 
+7f3080000000-7f3080021000 rw-p 00000000 00:00 0 
+7f3080021000-7f3084000000 ---p 00000000 00:00 0 
+7f3084000000-7f3084021000 rw-p 00000000 00:00 0 
+7f3084021000-7f3088000000 ---p 00000000 00:00 0 
+7f3088000000-7f3088329000 rw-p 00000000 00:00 0 
+7f3088329000-7f308c000000 ---p 00000000 00:00 0 
+7f308c000000-7f308c874000 rw-p 00000000 00:00 0 
+7f308c874000-7f3090000000 ---p 00000000 00:00 0 
+7f3090000000-7f3090021000 rw-p 00000000 00:00 0 
+7f3090021000-7f3094000000 ---p 00000000 00:00 0 
+7f3094000000-7f309442c000 rw-p 00000000 00:00 0 
+7f309442c000-7f3098000000 ---p 00000000 00:00 0 
+7f3098000000-7f3098021000 rw-p 00000000 00:00 0 
+7f3098021000-7f309c000000 ---p 00000000 00:00 0 
+7f309c000000-7f309c021000 rw-p 00000000 00:00 0 
+7f309c021000-7f30a0000000 ---p 00000000 00:00 0 
+7f30a0000000-7f30a0021000 rw-p 00000000 00:00 0 
+7f30a0021000-7f30a4000000 ---p 00000000 00:00 0 
+7f30a4000000-7f30a4021000 rw-p 00000000 00:00 0 
+7f30a4021000-7f30a8000000 ---p 00000000 00:00 0 
+7f30a8054000-7f30a8163000 r-xp 00000000 07:12 3401                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2
+7f30a8163000-7f30a8362000 ---p 0010f000 07:12 3401                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2
+7f30a8362000-7f30a8363000 r--p 0010e000 07:12 3401                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2
+7f30a8363000-7f30a8364000 rw-p 0010f000 07:12 3401                       /snap/arduino-mhall119/5/lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2
+7f30a8364000-7f30a8365000 rw-p 00000000 00:00 0 
+7f30a8365000-7f30a83b7000 r-xp 00000000 07:12 12611                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2
+7f30a83b7000-7f30a85b6000 ---p 00052000 07:12 12611                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2
+7f30a85b6000-7f30a85b7000 r--p 00051000 07:12 12611                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2
+7f30a85b7000-7f30a85b8000 rw-p 00052000 07:12 12611                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2
+7f30a85b8000-7f30a8601000 r-xp 00000000 07:12 12679                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3800.1
+7f30a8601000-7f30a8801000 ---p 00049000 07:12 12679                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3800.1
+7f30a8801000-7f30a8803000 r--p 00049000 07:12 12679                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3800.1
+7f30a8803000-7f30a8804000 rw-p 0004b000 07:12 12679                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3800.1
+7f30a8804000-7f30a8818000 r-xp 00000000 07:12 12683                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3800.1
+7f30a8818000-7f30a8a18000 ---p 00014000 07:12 12683                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3800.1
+7f30a8a18000-7f30a8a19000 r--p 00014000 07:12 12683                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3800.1
+7f30a8a19000-7f30a8a1a000 rw-p 00015000 07:12 12683                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3800.1
+7f30a8a1a000-7f30a8b9a000 r-xp 00000000 07:12 12601                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2
+7f30a8b9a000-7f30a8d9a000 ---p 00180000 07:12 12601                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2
+7f30a8d9a000-7f30a8d9e000 r--p 00180000 07:12 12601                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2
+7f30a8d9e000-7f30a8da0000 rw-p 00184000 07:12 12601                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4800.2
+7f30a8da0000-7f30a8da2000 rw-p 00000000 00:00 0 
+7f30a8da2000-7f30a8dc3000 r-xp 00000000 07:12 12597                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+7f30a8dc3000-7f30a8fc2000 ---p 00021000 07:12 12597                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+7f30a8fc2000-7f30a8fc3000 r--p 00020000 07:12 12597                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+7f30a8fc3000-7f30a8fc4000 rw-p 00021000 07:12 12597                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+7f30a8fc4000-7f30a90d2000 r-xp 00000000 07:12 12547                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6
+7f30a90d2000-7f30a92d2000 ---p 0010e000 07:12 12547                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6
+7f30a92d2000-7f30a92d5000 r--p 0010e000 07:12 12547                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6
+7f30a92d5000-7f30a92d6000 rw-p 00111000 07:12 12547                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6
+7f30a92d6000-7f30a92d8000 rw-p 00000000 00:00 0 
+7f30a92d8000-7f30a92fa000 r-xp 00000000 07:12 12533                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.21809.1
+7f30a92fa000-7f30a94f9000 ---p 00022000 07:12 12533                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.21809.1
+7f30a94f9000-7f30a94fc000 r--p 00021000 07:12 12533                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.21809.1
+7f30a94fc000-7f30a94fd000 rw-p 00024000 07:12 12533                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.21809.1
+7f30a94fd000-7f30a9509000 r-xp 00000000 07:12 12681                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+7f30a9509000-7f30a9708000 ---p 0000c000 07:12 12681                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+7f30a9708000-7f30a9709000 r--p 0000b000 07:12 12681                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+7f30a9709000-7f30a970a000 rw-p 0000c000 07:12 12681                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3800.1
+7f30a970a000-7f30a970d000 r-xp 00000000 07:12 12605                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4800.2
+7f30a970d000-7f30a990c000 ---p 00003000 07:12 12605                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4800.2
+7f30a990c000-7f30a990d000 r--p 00002000 07:12 12605                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4800.2
+7f30a990d000-7f30a990e000 rw-p 00003000 07:12 12605                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4800.2
+7f30a990e000-7f30a99be000 r-xp 00000000 07:12 12595                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+7f30a99be000-7f30a9bbd000 ---p 000b0000 07:12 12595                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+7f30a9bbd000-7f30a9bc1000 r--p 000af000 07:12 12595                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+7f30a9bc1000-7f30a9bc3000 rw-p 000b3000 07:12 12595                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+7f30a9bc3000-7f30aa001000 r-xp 00000000 07:12 12625                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+7f30aa001000-7f30aa200000 ---p 0043e000 07:12 12625                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+7f30aa200000-7f30aa207000 r--p 0043d000 07:12 12625                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+7f30aa207000-7f30aa20b000 rw-p 00444000 07:12 12625                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+7f30aa20b000-7f30aa20e000 rw-p 00000000 00:00 0 
+7f30aa20e000-7f30aa211000 ---p 00000000 00:00 0 
+7f30aa211000-7f30aa30f000 rw-p 00000000 00:00 0 
+7f30aa30f000-7f30aa312000 ---p 00000000 00:00 0 
+7f30aa312000-7f30aa410000 rw-p 00000000 00:00 0 
+7f30aa410000-7f30aa426000 r-xp 00000000 07:08 2154                       /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f30aa426000-7f30aa625000 ---p 00016000 07:08 2154                       /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f30aa625000-7f30aa626000 rw-p 00015000 07:08 2154                       /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f30aa626000-7f30aa68b000 r-xp 00000000 07:12 2920                       /snap/arduino-mhall119/5/java/lib/amd64/libfontmanager.so
+7f30aa68b000-7f30aa88a000 ---p 00065000 07:12 2920                       /snap/arduino-mhall119/5/java/lib/amd64/libfontmanager.so
+7f30aa88a000-7f30aa88f000 rw-p 00064000 07:12 2920                       /snap/arduino-mhall119/5/java/lib/amd64/libfontmanager.so
+7f30aa88f000-7f30aa89f000 rw-p 00000000 00:00 0 
+7f30aa89f000-7f30aa8ae000 r-xp 00000000 07:12 12521                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f30aa8ae000-7f30aaaad000 ---p 0000f000 07:12 12521                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f30aaaad000-7f30aaaae000 r--p 0000e000 07:12 12521                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f30aaaae000-7f30aaaaf000 rw-p 0000f000 07:12 12521                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f30aaaaf000-7f30aaab4000 r-xp 00000000 07:12 12529                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f30aaab4000-7f30aacb3000 ---p 00005000 07:12 12529                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f30aacb3000-7f30aacb4000 r--p 00004000 07:12 12529                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f30aacb4000-7f30aacb5000 rw-p 00005000 07:12 12529                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f30aacb5000-7f30aad09000 r-xp 00000000 07:12 2914                       /snap/arduino-mhall119/5/java/lib/amd64/libawt_xawt.so
+7f30aad09000-7f30aaf09000 ---p 00054000 07:12 2914                       /snap/arduino-mhall119/5/java/lib/amd64/libawt_xawt.so
+7f30aaf09000-7f30aaf0d000 rw-p 00054000 07:12 2914                       /snap/arduino-mhall119/5/java/lib/amd64/libawt_xawt.so
+7f30aaf0d000-7f30aaf0e000 rw-p 00000000 00:00 0 
+7f30aaf0e000-7f30aafb0000 r-xp 00000000 07:12 2912                       /snap/arduino-mhall119/5/java/lib/amd64/libawt.so
+7f30aafb0000-7f30ab1b0000 ---p 000a2000 07:12 2912                       /snap/arduino-mhall119/5/java/lib/amd64/libawt.so
+7f30ab1b0000-7f30ab1bc000 rw-p 000a2000 07:12 2912                       /snap/arduino-mhall119/5/java/lib/amd64/libawt.so
+7f30ab1bc000-7f30ab1e0000 rw-p 00000000 00:00 0 
+7f30ab1e0000-7f30ab1f3000 r-xp 00000000 07:12 3339                       /snap/arduino-mhall119/5/lib/liblistSerialsj.so
+7f30ab1f3000-7f30ab3f2000 ---p 00013000 07:12 3339                       /snap/arduino-mhall119/5/lib/liblistSerialsj.so
+7f30ab3f2000-7f30ab3f3000 r--p 00012000 07:12 3339                       /snap/arduino-mhall119/5/lib/liblistSerialsj.so
+7f30ab3f3000-7f30ab3f4000 rw-p 00013000 07:12 3339                       /snap/arduino-mhall119/5/lib/liblistSerialsj.so
+7f30ab3f4000-7f30ab3f5000 ---p 00000000 00:00 0 
+7f30ab3f5000-7f30ab4f5000 rw-p 00000000 00:00 0 
+7f30ab4f5000-7f30ab4f8000 ---p 00000000 00:00 0 
+7f30ab4f8000-7f30ab5f6000 rw-p 00000000 00:00 0 
+7f30ab5f6000-7f30ab5f9000 ---p 00000000 00:00 0 
+7f30ab5f9000-7f30ab6f7000 rw-p 00000000 00:00 0 
+7f30ab6f7000-7f30ab6fa000 ---p 00000000 00:00 0 
+7f30ab6fa000-7f30ab7f8000 rw-p 00000000 00:00 0 
+7f30ab7f8000-7f30ab7fb000 ---p 00000000 00:00 0 
+7f30ab7fb000-7f30ab8f9000 rw-p 00000000 00:00 0 
+7f30ab8f9000-7f30ab8fc000 ---p 00000000 00:00 0 
+7f30ab8fc000-7f30ab9fa000 rw-p 00000000 00:00 0 
+7f30ab9fa000-7f30ab9fd000 ---p 00000000 00:00 0 
+7f30ab9fd000-7f30abafb000 rw-p 00000000 00:00 0 
+7f30abafb000-7f30abafe000 ---p 00000000 00:00 0 
+7f30abafe000-7f30abbfc000 rw-p 00000000 00:00 0 
+7f30abbfc000-7f30abbfd000 ---p 00000000 00:00 0 
+7f30abbfd000-7f30ac000000 rw-p 00000000 00:00 0 
+7f30ac000000-7f30ac021000 rw-p 00000000 00:00 0 
+7f30ac021000-7f30b0000000 ---p 00000000 00:00 0 
+7f30b0039000-7f30b003b000 r--s 00007000 07:12 5662                       /snap/arduino-mhall119/5/tools/WiFi101/tool/WiFi101.jar
+7f30b003b000-7f30b004e000 r--s 00345000 07:12 3211                       /snap/arduino-mhall119/5/java/lib/resources.jar
+7f30b004e000-7f30b4000000 rw-p 00000000 00:00 0 
+7f30b4000000-7f30b4021000 rw-p 00000000 00:00 0 
+7f30b4021000-7f30b8000000 ---p 00000000 00:00 0 
+7f30b8000000-7f30b8005000 r--s 0009a000 07:12 3148                       /snap/arduino-mhall119/5/java/lib/jsse.jar
+7f30b8005000-7f30b8059000 r--p 00000000 07:12 14012                      /snap/arduino-mhall119/5/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
+7f30b8059000-7f30b80b0000 r--p 00000000 07:12 14023                      /snap/arduino-mhall119/5/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-R.ttf
+7f30b80b0000-7f30b80b6000 r--s 00000000 08:02 47056194                   /home/sudarshan/arduino-mhall119/common/.cache/fontconfig/94906c3757e3220f71e1d1cbe438e4fc-le64.cache-6
+7f30b80b6000-7f30b80ba000 r--s 00000000 08:02 47056189                   /home/sudarshan/arduino-mhall119/common/.cache/fontconfig/7b464a649e9f6451e6aa1e38b57a9859-le64.cache-6
+7f30b80ba000-7f30b80bf000 r--s 002f9000 07:12 2970                       /snap/arduino-mhall119/5/java/lib/charsets.jar
+7f30b80bf000-7f30b80c9000 r--s 00116000 07:12 3094                       /snap/arduino-mhall119/5/java/lib/ext/localedata.jar
+7f30b80c9000-7f30b80e5000 r--s 00393000 07:12 3091                       /snap/arduino-mhall119/5/java/lib/ext/cldrdata.jar
+7f30b80e5000-7f30b80f1000 r--s 0008f000 07:12 3408                       /snap/arduino-mhall119/5/lib/xmlgraphics-commons-2.0.jar
+7f30b80f1000-7f30b80f9000 r--s 00028000 07:12 3406                       /snap/arduino-mhall119/5/lib/xml-apis-1.3.04.jar
+7f30b80f9000-7f30b9000000 rw-p 00000000 00:00 0 
+7f30b9000000-7f30b9990000 rwxp 00000000 00:00 0 
+7f30b9990000-7f30c8000000 ---p 00000000 00:00 0 
+7f30c8000000-7f30c8f87000 rw-p 00000000 00:00 0 
+7f30c8f87000-7f30cc000000 ---p 00000000 00:00 0 
+7f30cc000000-7f30cc021000 rw-p 00000000 00:00 0 
+7f30cc021000-7f30d0000000 ---p 00000000 00:00 0 
+7f30d0000000-7f30d0118000 rw-p 00000000 00:00 0 
+7f30d0118000-7f30d4000000 ---p 00000000 00:00 0 
+7f30d4001000-7f30d4006000 r--s 00010000 07:12 3407                       /snap/arduino-mhall119/5/lib/xml-apis-ext-1.3.04.jar
+7f30d4006000-7f30d4007000 r--s 00002000 07:12 3345                       /snap/arduino-mhall119/5/lib/slf4j-simple-1.7.22.jar
+7f30d4007000-7f30d4009000 r--s 00009000 07:12 3344                       /snap/arduino-mhall119/5/lib/slf4j-api-1.7.22.jar
+7f30d4009000-7f30d4015000 r--s 0010f000 07:12 3343                       /snap/arduino-mhall119/5/lib/rsyntaxtextarea-2.6.1.jar
+7f30d4015000-7f30d4018000 ---p 00000000 00:00 0 
+7f30d4018000-7f30d404e000 rw-p 00000000 00:00 0 
+7f30d404e000-7f30d4055000 r--s 00060000 07:12 3340                       /snap/arduino-mhall119/5/lib/pde.jar
+7f30d4055000-7f30d4056000 r--s 00025000 07:12 3336                       /snap/arduino-mhall119/5/lib/jssc-2.8.0-arduino1.jar
+7f30d4056000-7f30d405a000 r--s 0003b000 07:12 3335                       /snap/arduino-mhall119/5/lib/jsch-0.1.50.jar
+7f30d405a000-7f30d4070000 r--s 001b0000 07:12 3334                       /snap/arduino-mhall119/5/lib/jna-platform-4.2.2.jar
+7f30d4070000-7f30d4074000 r--s 00112000 07:12 3333                       /snap/arduino-mhall119/5/lib/jna-4.2.2.jar
+7f30d4074000-7f30d4078000 r--s 00031000 07:12 3332                       /snap/arduino-mhall119/5/lib/jmdns-3.5.1.jar
+7f30d4078000-7f30d407a000 r--s 00009000 07:12 3331                       /snap/arduino-mhall119/5/lib/java-semver-0.8.0.jar
+7f30d407a000-7f30d408b000 r--s 0010d000 07:12 3329                       /snap/arduino-mhall119/5/lib/jackson-databind-2.6.3.jar
+7f30d408b000-7f30d438e000 rw-p 00000000 00:00 0 
+7f30d438e000-7f30d4568000 r--s 03d4d000 07:12 3212                       /snap/arduino-mhall119/5/java/lib/rt.jar
+7f30d4568000-7f30d4943000 rw-p 00000000 00:00 0 
+7f30d4943000-7f30d4944000 ---p 00000000 00:00 0 
+7f30d4944000-7f30d4a44000 rw-p 00000000 00:00 0 
+7f30d4a44000-7f30d4a45000 ---p 00000000 00:00 0 
+7f30d4a45000-7f30d4b45000 rw-p 00000000 00:00 0 
+7f30d4b45000-7f30d4b46000 ---p 00000000 00:00 0 
+7f30d4b46000-7f30d4c46000 rw-p 00000000 00:00 0 
+7f30d4c46000-7f30d4c47000 ---p 00000000 00:00 0 
+7f30d4c47000-7f30d4d60000 rw-p 00000000 00:00 0 
+7f30d4d60000-7f30d4fd9000 ---p 00000000 00:00 0 
+7f30d4fd9000-7f30d4ff2000 rw-p 00000000 00:00 0 
+7f30d4ff2000-7f30d526b000 ---p 00000000 00:00 0 
+7f30d526b000-7f30d528f000 rw-p 00000000 00:00 0 
+7f30d528f000-7f30d53b4000 ---p 00000000 00:00 0 
+7f30d53b4000-7f30d53dc000 rw-p 00000000 00:00 0 
+7f30d53dc000-7f30d5775000 ---p 00000000 00:00 0 
+7f30d5775000-7f30d578f000 r-xp 00000000 07:12 2963                       /snap/arduino-mhall119/5/java/lib/amd64/libzip.so
+7f30d578f000-7f30d598f000 ---p 0001a000 07:12 2963                       /snap/arduino-mhall119/5/java/lib/amd64/libzip.so
+7f30d598f000-7f30d5990000 rw-p 0001a000 07:12 2963                       /snap/arduino-mhall119/5/java/lib/amd64/libzip.so
+7f30d5990000-7f30d599b000 r-xp 00000000 07:08 2210                       /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f30d599b000-7f30d5b9a000 ---p 0000b000 07:08 2210                       /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f30d5b9a000-7f30d5b9b000 r--p 0000a000 07:08 2210                       /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f30d5b9b000-7f30d5b9c000 rw-p 0000b000 07:08 2210                       /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f30d5b9c000-7f30d5ba2000 rw-p 00000000 00:00 0 
+7f30d5ba2000-7f30d5bad000 r-xp 00000000 07:08 2215                       /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f30d5bad000-7f30d5dac000 ---p 0000b000 07:08 2215                       /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f30d5dac000-7f30d5dad000 r--p 0000a000 07:08 2215                       /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f30d5dad000-7f30d5dae000 rw-p 0000b000 07:08 2215                       /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f30d5dae000-7f30d5dc4000 r-xp 00000000 07:08 2204                       /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f30d5dc4000-7f30d5fc3000 ---p 00016000 07:08 2204                       /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f30d5fc3000-7f30d5fc4000 r--p 00015000 07:08 2204                       /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f30d5fc4000-7f30d5fc5000 rw-p 00016000 07:08 2204                       /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f30d5fc5000-7f30d5fc7000 rw-p 00000000 00:00 0 
+7f30d5fc7000-7f30d5fcf000 r-xp 00000000 07:08 2206                       /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f30d5fcf000-7f30d61ce000 ---p 00008000 07:08 2206                       /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f30d61ce000-7f30d61cf000 r--p 00007000 07:08 2206                       /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f30d61cf000-7f30d61d0000 rw-p 00008000 07:08 2206                       /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f30d61d0000-7f30d61fb000 r-xp 00000000 07:12 2930                       /snap/arduino-mhall119/5/java/lib/amd64/libjava.so
+7f30d61fb000-7f30d63fa000 ---p 0002b000 07:12 2930                       /snap/arduino-mhall119/5/java/lib/amd64/libjava.so
+7f30d63fa000-7f30d63fc000 rw-p 0002a000 07:12 2930                       /snap/arduino-mhall119/5/java/lib/amd64/libjava.so
+7f30d63fc000-7f30d6409000 r-xp 00000000 07:12 2962                       /snap/arduino-mhall119/5/java/lib/amd64/libverify.so
+7f30d6409000-7f30d6609000 ---p 0000d000 07:12 2962                       /snap/arduino-mhall119/5/java/lib/amd64/libverify.so
+7f30d6609000-7f30d660b000 rw-p 0000d000 07:12 2962                       /snap/arduino-mhall119/5/java/lib/amd64/libverify.so
+7f30d660b000-7f30d6612000 r-xp 00000000 07:08 2244                       /lib/x86_64-linux-gnu/librt-2.23.so
+7f30d6612000-7f30d6811000 ---p 00007000 07:08 2244                       /lib/x86_64-linux-gnu/librt-2.23.so
+7f30d6811000-7f30d6812000 r--p 00006000 07:08 2244                       /lib/x86_64-linux-gnu/librt-2.23.so
+7f30d6812000-7f30d6813000 rw-p 00007000 07:08 2244                       /lib/x86_64-linux-gnu/librt-2.23.so
+7f30d6813000-7f30d6818000 r-xp 00000000 07:12 12519                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f30d6818000-7f30d6a17000 ---p 00005000 07:12 12519                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f30d6a17000-7f30d6a18000 r--p 00004000 07:12 12519                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f30d6a18000-7f30d6a19000 rw-p 00005000 07:12 12519                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f30d6a19000-7f30d6a22000 r-xp 00000000 07:12 12527                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f30d6a22000-7f30d6c21000 ---p 00009000 07:12 12527                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f30d6c21000-7f30d6c22000 r--p 00008000 07:12 12527                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f30d6c22000-7f30d6c23000 rw-p 00009000 07:12 12527                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f30d6c23000-7f30d6c26000 ---p 00000000 00:00 0 
+7f30d6c26000-7f30d6d24000 rw-p 00000000 00:00 0 
+7f30d6d24000-7f30d6d2d000 r-xp 00000000 07:12 12511                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f30d6d2d000-7f30d6f2c000 ---p 00009000 07:12 12511                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f30d6f2c000-7f30d6f2d000 r--p 00008000 07:12 12511                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f30d6f2d000-7f30d6f2e000 rw-p 00009000 07:12 12511                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f30d6f2e000-7f30d705e000 r--p 00000000 07:12 9506                       /snap/arduino-mhall119/5/usr/lib/locale/it_IT.utf8/LC_COLLATE
+7f30d705e000-7f30d705f000 ---p 00000000 00:00 0 
+7f30d705f000-7f30d785f000 rw-p 00000000 00:00 0 
+7f30d785f000-7f30d7864000 r-xp 00000000 07:12 12515                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f30d7864000-7f30d7a63000 ---p 00005000 07:12 12515                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f30d7a63000-7f30d7a64000 r--p 00004000 07:12 12515                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f30d7a64000-7f30d7a65000 rw-p 00005000 07:12 12515                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f30d7a65000-7f30d7a67000 r-xp 00000000 07:12 12507                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f30d7a67000-7f30d7c67000 ---p 00002000 07:12 12507                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f30d7c67000-7f30d7c68000 r--p 00002000 07:12 12507                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f30d7c68000-7f30d7c69000 rw-p 00003000 07:12 12507                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f30d7c69000-7f30d7c8a000 r-xp 00000000 07:12 12736                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f30d7c8a000-7f30d7e89000 ---p 00021000 07:12 12736                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f30d7e89000-7f30d7e8a000 r--p 00020000 07:12 12736                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f30d7e8a000-7f30d7e8b000 rw-p 00021000 07:12 12736                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f30d7e8b000-7f30d7e9c000 r-xp 00000000 07:12 12517                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f30d7e9c000-7f30d809b000 ---p 00011000 07:12 12517                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f30d809b000-7f30d809c000 r--p 00010000 07:12 12517                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f30d809c000-7f30d809d000 rw-p 00011000 07:12 12517                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f30d809d000-7f30d81d2000 r-xp 00000000 07:12 12505                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f30d81d2000-7f30d83d2000 ---p 00135000 07:12 12505                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f30d83d2000-7f30d83d3000 r--p 00135000 07:12 12505                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f30d83d3000-7f30d83d7000 rw-p 00136000 07:12 12505                      /snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f30d83d7000-7f30d8437000 r-xp 00000000 07:12 2958                       /snap/arduino-mhall119/5/java/lib/amd64/libsplashscreen.so
+7f30d8437000-7f30d8637000 ---p 00060000 07:12 2958                       /snap/arduino-mhall119/5/java/lib/amd64/libsplashscreen.so
+7f30d8637000-7f30d8638000 rw-p 00060000 07:12 2958                       /snap/arduino-mhall119/5/java/lib/amd64/libsplashscreen.so
+7f30d8638000-7f30d863b000 rw-p 00000000 00:00 0 
+7f30d863b000-7f30d8743000 r-xp 00000000 07:08 2181                       /lib/x86_64-linux-gnu/libm-2.23.so
+7f30d8743000-7f30d8942000 ---p 00108000 07:08 2181                       /lib/x86_64-linux-gnu/libm-2.23.so
+7f30d8942000-7f30d8943000 r--p 00107000 07:08 2181                       /lib/x86_64-linux-gnu/libm-2.23.so
+7f30d8943000-7f30d8944000 rw-p 00108000 07:08 2181                       /lib/x86_64-linux-gnu/libm-2.23.so
+7f30d8944000-7f30d9617000 r-xp 00000000 07:12 2967                       /snap/arduino-mhall119/5/java/lib/amd64/server/libjvm.so
+7f30d9617000-7f30d9816000 ---p 00cd3000 07:12 2967                       /snap/arduino-mhall119/5/java/lib/amd64/server/libjvm.so
+7f30d9816000-7f30d98f0000 rw-p 00cd2000 07:12 2967                       /snap/arduino-mhall119/5/java/lib/amd64/server/libjvm.so
+7f30d98f0000-7f30d993b000 rw-p 00000000 00:00 0 
+7f30d993b000-7f30d9afb000 r-xp 00000000 07:08 2122                       /lib/x86_64-linux-gnu/libc-2.23.so
+7f30d9afb000-7f30d9cfb000 ---p 001c0000 07:08 2122                       /lib/x86_64-linux-gnu/libc-2.23.so
+7f30d9cfb000-7f30d9cff000 r--p 001c0000 07:08 2122                       /lib/x86_64-linux-gnu/libc-2.23.so
+7f30d9cff000-7f30d9d01000 rw-p 001c4000 07:08 2122                       /lib/x86_64-linux-gnu/libc-2.23.so
+7f30d9d01000-7f30d9d05000 rw-p 00000000 00:00 0 
+7f30d9d05000-7f30d9d08000 r-xp 00000000 07:08 2140                       /lib/x86_64-linux-gnu/libdl-2.23.so
+7f30d9d08000-7f30d9f07000 ---p 00003000 07:08 2140                       /lib/x86_64-linux-gnu/libdl-2.23.so
+7f30d9f07000-7f30d9f08000 r--p 00002000 07:08 2140                       /lib/x86_64-linux-gnu/libdl-2.23.so
+7f30d9f08000-7f30d9f09000 rw-p 00003000 07:08 2140                       /lib/x86_64-linux-gnu/libdl-2.23.so
+7f30d9f09000-7f30d9f1e000 r-xp 00000000 07:12 2905                       /snap/arduino-mhall119/5/java/lib/amd64/jli/libjli.so
+7f30d9f1e000-7f30da11e000 ---p 00015000 07:12 2905                       /snap/arduino-mhall119/5/java/lib/amd64/jli/libjli.so
+7f30da11e000-7f30da11f000 rw-p 00015000 07:12 2905                       /snap/arduino-mhall119/5/java/lib/amd64/jli/libjli.so
+7f30da11f000-7f30da137000 r-xp 00000000 07:08 2238                       /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f30da137000-7f30da336000 ---p 00018000 07:08 2238                       /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f30da336000-7f30da337000 r--p 00017000 07:08 2238                       /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f30da337000-7f30da338000 rw-p 00018000 07:08 2238                       /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f30da338000-7f30da33c000 rw-p 00000000 00:00 0 
+7f30da33c000-7f30da33d000 r-xp 00000000 07:12 3289                       /snap/arduino-mhall119/5/lib/bindtextdomain.so
+7f30da33d000-7f30da53d000 ---p 00001000 07:12 3289                       /snap/arduino-mhall119/5/lib/bindtextdomain.so
+7f30da53d000-7f30da53e000 r--p 00001000 07:12 3289                       /snap/arduino-mhall119/5/lib/bindtextdomain.so
+7f30da53e000-7f30da53f000 rw-p 00002000 07:12 3289                       /snap/arduino-mhall119/5/lib/bindtextdomain.so
+7f30da53f000-7f30da565000 r-xp 00000000 07:08 2100                       /lib/x86_64-linux-gnu/ld-2.23.so
+7f30da565000-7f30da567000 r--s 00012000 07:12 3330                       /snap/arduino-mhall119/5/lib/jackson-module-mrbean-2.6.3.jar
+7f30da567000-7f30da56b000 r--s 0003c000 07:12 3328                       /snap/arduino-mhall119/5/lib/jackson-core-2.6.3.jar
+7f30da56b000-7f30da56e000 r--s 00009000 07:12 3327                       /snap/arduino-mhall119/5/lib/jackson-annotations-2.6.3.jar
+7f30da56e000-7f30da574000 r--s 0003f000 07:12 3296                       /snap/arduino-mhall119/5/lib/commons-net-3.3.jar
+7f30da574000-7f30da576000 r--s 00008000 07:12 3295                       /snap/arduino-mhall119/5/lib/commons-logging-1.0.4.jar
+7f30da576000-7f30da57d000 r--s 0005e000 07:12 3294                       /snap/arduino-mhall119/5/lib/commons-lang3-3.3.2.jar
+7f30da57d000-7f30da583000 r--s 00045000 07:12 3293                       /snap/arduino-mhall119/5/lib/commons-httpclient-3.1.jar
+7f30da583000-7f30da585000 r--s 0000b000 07:12 3292                       /snap/arduino-mhall119/5/lib/commons-exec-1.1.jar
+7f30da585000-7f30da58c000 r--s 00053000 07:12 3291                       /snap/arduino-mhall119/5/lib/commons-compress-1.8.jar
+7f30da58c000-7f30da593000 r--s 00039000 07:12 3290                       /snap/arduino-mhall119/5/lib/commons-codec-1.7.jar
+7f30da593000-7f30da5d3000 r--s 00285000 07:12 3288                       /snap/arduino-mhall119/5/lib/bcprov-jdk15on-152.jar
+7f30da5d3000-7f30da5da000 r--s 0003c000 07:12 3287                       /snap/arduino-mhall119/5/lib/bcpg-jdk15on-152.jar
+7f30da5da000-7f30da5db000 r--s 00006000 07:12 3286                       /snap/arduino-mhall119/5/lib/batik-xml-1.8.jar
+7f30da5db000-7f30da5de000 r--s 00018000 07:12 3285                       /snap/arduino-mhall119/5/lib/batik-util-1.8.jar
+7f30da5de000-7f30da5e1000 r--s 00014000 07:12 3284                       /snap/arduino-mhall119/5/lib/batik-transcoder-1.8.jar
+7f30da5e1000-7f30da5e6000 r--s 00031000 07:12 3282                       /snap/arduino-mhall119/5/lib/batik-svg-dom-1.8.jar
+7f30da5e6000-7f30da5e8000 r--s 00003000 07:12 3280                       /snap/arduino-mhall119/5/lib/batik-script-1.8.jar
+7f30da5e8000-7f30da5eb000 r--s 0000b000 07:12 3278                       /snap/arduino-mhall119/5/lib/batik-parser-1.8.jar
+7f30da5eb000-7f30da5ef000 r--s 00020000 07:12 3277                       /snap/arduino-mhall119/5/lib/batik-gvt-1.8.jar
+7f30da5ef000-7f30da5f3000 r--s 0001f000 07:12 3275                       /snap/arduino-mhall119/5/lib/batik-dom-1.8.jar
+7f30da5f3000-7f30da5fa000 r--s 00038000 07:12 3274                       /snap/arduino-mhall119/5/lib/batik-css-1.8.jar
+7f30da5fa000-7f30da606000 r--s 00076000 07:12 3272                       /snap/arduino-mhall119/5/lib/batik-bridge-1.8.jar
+7f30da606000-7f30da612000 r--s 00051000 07:12 3270                       /snap/arduino-mhall119/5/lib/batik-anim-1.8.jar
+7f30da642000-7f30da6a2000 rw-s 00000000 00:05 19005470                   /SYSV00000000 (deleted)
+7f30da6a2000-7f30da6a3000 r--s 00000000 00:33 50                         /run/user/1000/snap.arduino-mhall119/dconf/user
+7f30da6a3000-7f30da6ac000 r--p 00000000 08:02 47056638                   /home/sudarshan/arduino-mhall119/5/.local/share/glib-2.0/schemas/gschemas.compiled
+7f30da6ac000-7f30da6ad000 r--s 00002000 07:12 3276                       /snap/arduino-mhall119/5/lib/batik-ext-1.8.jar
+7f30da6ad000-7f30da6b0000 r--s 00018000 07:12 3273                       /snap/arduino-mhall119/5/lib/batik-codec-1.8.jar
+7f30da6b0000-7f30da6b7000 r--s 00043000 07:12 3271                       /snap/arduino-mhall119/5/lib/batik-awt-util-1.8.jar
+7f30da6b7000-7f30da6b9000 r--s 00003000 07:12 3283                       /snap/arduino-mhall119/5/lib/batik-svgpp-1.8.jar
+7f30da6b9000-7f30da6c2000 r--s 00072000 07:12 3281                       /snap/arduino-mhall119/5/lib/batik-squiggle-1.8.jar
+7f30da6c2000-7f30da6c9000 r--s 0017a000 07:12 3265                       /snap/arduino-mhall119/5/lib/arduino-core.jar
+7f30da6c9000-7f30da6f0000 rw-p 00000000 00:00 0 
+7f30da6f0000-7f30da6f8000 rw-s 00000000 08:02 54001761                   /tmp/hsperfdata_sudarshan/11833
+7f30da6f8000-7f30da746000 r--p 00000000 07:12 9507                       /snap/arduino-mhall119/5/usr/lib/locale/it_IT.utf8/LC_CTYPE
+7f30da746000-7f30da74a000 rw-p 00000000 00:00 0 
+7f30da74a000-7f30da74c000 r--s 0000a000 07:12 3279                       /snap/arduino-mhall119/5/lib/batik-rasterizer-1.8.jar
+7f30da74c000-7f30da74d000 r--s 00001000 07:12 3269                       /snap/arduino-mhall119/5/lib/batik-1.8.jar
+7f30da74d000-7f30da750000 r--s 00004000 07:12 3263                       /snap/arduino-mhall119/5/lib/apple.jar
+7f30da750000-7f30da751000 rw-p 00000000 00:00 0 
+7f30da751000-7f30da752000 r--p 00000000 00:00 0 
+7f30da752000-7f30da759000 r--s 00000000 07:08 6833                       /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f30da759000-7f30da75a000 r--p 00000000 07:12 6602                       /snap/arduino-mhall119/5/usr/lib/locale/bn_BD/LC_NUMERIC
+7f30da75a000-7f30da75b000 r--p 00000000 07:12 7641                       /snap/arduino-mhall119/5/usr/lib/locale/en_IN/LC_TIME
+7f30da75b000-7f30da75c000 r--p 00000000 07:12 7636                       /snap/arduino-mhall119/5/usr/lib/locale/en_IN/LC_MONETARY
+7f30da75c000-7f30da75d000 r--p 00000000 07:12 7635                       /snap/arduino-mhall119/5/usr/lib/locale/en_IN/LC_MESSAGES/SYS_LC_MESSAGES
+7f30da75d000-7f30da75e000 r--p 00000000 07:12 9515                       /snap/arduino-mhall119/5/usr/lib/locale/it_IT.utf8/LC_PAPER
+7f30da75e000-7f30da75f000 r--p 00000000 07:12 7637                       /snap/arduino-mhall119/5/usr/lib/locale/en_IN/LC_NAME
+7f30da75f000-7f30da760000 r--p 00000000 07:12 7629                       /snap/arduino-mhall119/5/usr/lib/locale/en_IN/LC_ADDRESS
+7f30da760000-7f30da761000 r--p 00000000 07:12 6576                       /snap/arduino-mhall119/5/usr/lib/locale/bhb_IN.utf8/LC_TELEPHONE
+7f30da761000-7f30da762000 r--p 00000000 07:12 9509                       /snap/arduino-mhall119/5/usr/lib/locale/it_IT.utf8/LC_MEASUREMENT
+7f30da762000-7f30da763000 r--p 00000000 07:12 7632                       /snap/arduino-mhall119/5/usr/lib/locale/en_IN/LC_IDENTIFICATION
+7f30da763000-7f30da764000 rw-p 00000000 00:00 0 
+7f30da764000-7f30da765000 r--p 00025000 07:08 2100                       /lib/x86_64-linux-gnu/ld-2.23.so
+7f30da765000-7f30da766000 rw-p 00026000 07:08 2100                       /lib/x86_64-linux-gnu/ld-2.23.so
+7f30da766000-7f30da767000 rw-p 00000000 00:00 0 
+7ffde132f000-7ffde1351000 rw-p 00000000 00:00 0                          [stack]
+7ffde13d4000-7ffde13d7000 r--p 00000000 00:00 0                          [vvar]
+7ffde13d7000-7ffde13d9000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -DAPP_DIR=/snap/arduino-mhall119/5 -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Duser.home=/home/sudarshan/snap/arduino-mhall119/5 
+java_command: processing.app.Base
+java_class_path (initial): :/snap/arduino-mhall119/5/java/lib/rt.jar:/snap/arduino-mhall119/5/java/lib/tools.jar:/snap/arduino-mhall119/5/lib/apple.jar:/snap/arduino-mhall119/5/lib/arduino-core.jar:/snap/arduino-mhall119/5/lib/batik-1.8.jar:/snap/arduino-mhall119/5/lib/batik-anim-1.8.jar:/snap/arduino-mhall119/5/lib/batik-awt-util-1.8.jar:/snap/arduino-mhall119/5/lib/batik-bridge-1.8.jar:/snap/arduino-mhall119/5/lib/batik-codec-1.8.jar:/snap/arduino-mhall119/5/lib/batik-css-1.8.jar:/snap/arduino-mhall119/5/lib/batik-dom-1.8.jar:/snap/arduino-mhall119/5/lib/batik-ext-1.8.jar:/snap/arduino-mhall119/5/lib/batik-gvt-1.8.jar:/snap/arduino-mhall119/5/lib/batik-parser-1.8.jar:/snap/arduino-mhall119/5/lib/batik-rasterizer-1.8.jar:/snap/arduino-mhall119/5/lib/batik-script-1.8.jar:/snap/arduino-mhall119/5/lib/batik-squiggle-1.8.jar:/snap/arduino-mhall119/5/lib/batik-svg-dom-1.8.jar:/snap/arduino-mhall119/5/lib/batik-svgpp-1.8.jar:/snap/arduino-mhall119/5/lib/batik-transcoder-1.8.jar:/snap/arduino-mhall119/5/lib/batik-util-1.8.jar:/snap/arduino-mhall119/5/lib/batik-xml-1.8.jar:/snap/arduino-mhall119/5/lib/bcpg-jdk15on-152.jar:/snap/arduino-mhall119/5/lib/bcprov-jdk15on-152.jar:/snap/arduino-mhall119/5/lib/commons-codec-1.7.jar:/snap/arduino-mhall119/5/lib/commons-compress-1.8.jar:/snap/arduino-mhall119/5/lib/commons-exec-1.1.jar:/snap/arduino-mhall119/5/lib/commons-httpclient-3.1.jar:/snap/arduino-mhall119/5/lib/commons-lang3-3.3.2.jar:/snap/arduino-mhall119/5/lib/commons-logging-1.0.4.jar:/snap/arduino-mhall119/5/lib/commons-net-3.3.jar:/snap/arduino-mhall119/5/lib/jackson-annotations-2.6.3.jar:/snap/arduino-mhall119/5/lib/jackson-core-2.6.3.jar:/snap/arduino-mhall119/5/lib/jackson-databind-2.6.3.jar:/snap/arduino-mhall119/5/lib/jackson-module-mrbean-2.6.3.jar:/snap/arduino-mhall119/5/lib/java-semver-0.8.0.jar:/snap/arduino-mhall119/5/lib/jmdns-3.5.1.jar:/snap/arduino-mhall119/5/lib/jna-4.2.2.jar:/snap/arduino-mhall119/5/lib/jna-platform-4.2.2.jar:/snap/arduino-mhall119/5/l
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_TOOL_OPTIONS=
+PATH=/snap/arduino-mhall119/5/java/bin:/snap/arduino-mhall119/5/usr/sbin:/snap/arduino-mhall119/5/usr/bin:/snap/arduino-mhall119/5/sbin:/snap/arduino-mhall119/5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+USERNAME=sudarshan
+LD_LIBRARY_PATH=/snap/arduino-mhall119/5/lib:/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void:/snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu::/snap/arduino-mhall119/5/lib:/snap/arduino-mhall119/5/usr/lib:/snap/arduino-mhall119/5/lib/x86_64-linux-gnu:/snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu:/snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/mesa-egl:/snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/mesa-egl:/snap/arduino-mhall119/5/usr/lib/x86_64-linux-gnu/dri:/var/lib/snapd/lib/gl
+LD_PRELOAD=:/snap/arduino-mhall119/5/lib/bindtextdomain.so
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xacba10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xacba10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x924ba0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: SIG_IGN, sa_mask[0]=00000000000010000000000000000000, sa_flags=SA_RESTART
+SIGXFSZ: [libjvm.so+0x924ba0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x924ba0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x9263e0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x9277e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x9277e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x9277e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x9277e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.2 LTS"
+
+uname:Linux 4.18.0-15-generic #16~18.04.1-Ubuntu SMP Thu Feb 7 14:06:04 UTC 2019 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 30579, NOFILE 1048576, AS infinity
+load average:13.83 6.12 3.90
+
+/proc/meminfo:
+MemTotal:        8078668 kB
+MemFree:         4559592 kB
+MemAvailable:    4667360 kB
+Buffers:           20256 kB
+Cached:           428996 kB
+SwapCached:         5256 kB
+Active:           709476 kB
+Inactive:         279356 kB
+Active(anon):     608608 kB
+Inactive(anon):    67936 kB
+Active(file):     100868 kB
+Inactive(file):   211420 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097148 kB
+SwapFree:        1826044 kB
+Dirty:              7100 kB
+Writeback:          1160 kB
+AnonPages:        536768 kB
+Mapped:           213420 kB
+Shmem:            136624 kB
+Slab:             117844 kB
+SReclaimable:      37444 kB
+SUnreclaim:        80400 kB
+KernelStack:        5088 kB
+PageTables:        12356 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6136480 kB
+Committed_AS:    2665416 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      664124 kB
+DirectMap2M:     7634944 kB
+DirectMap1G:     1048576 kB
+
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i3-5005U CPU @ 2.00GHz
+stepping	: 4
+microcode	: 0x2b
+cpu MHz		: 1063.514
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap intel_pt xsaveopt dtherm arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 3990.73
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i3-5005U CPU @ 2.00GHz
+stepping	: 4
+microcode	: 0x2b
+cpu MHz		: 1200.897
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap intel_pt xsaveopt dtherm arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 3990.73
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i3-5005U CPU @ 2.00GHz
+stepping	: 4
+microcode	: 0x2b
+cpu MHz		: 1083.062
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap intel_pt xsaveopt dtherm arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 3990.73
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i3-5005U CPU @ 2.00GHz
+stepping	: 4
+microcode	: 0x2b
+cpu MHz		: 1110.731
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap intel_pt xsaveopt dtherm arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 3990.73
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8078668k(4559592k free), swap 2097148k(1826044k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.144-b01) for linux-amd64 JRE (1.8.0_144-b01), built on Jul 21 2017 21:57:33 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Tue Jul 30 23:54:37 2019
+elapsed time: 974 seconds (0d 0h 16m 14s)
+
